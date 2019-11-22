@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <h1>Course Navigator</h1>
+  <ul class="list-group">
+    <h2>Course</h2>
+    <li (click)="selectCourse(course)"
+        *ngFor="let course of courses"
+         class="list-group-item btn btn-outline-dark">
+<!--        routerLink="/courses/{{course.id}}/modules">-->
+      {{course.title}}
+    </li>
+  </ul>
+  <ul class="list-group">
+    <li (click)="selectModule(module)"
+      *ngFor="let module of modules" class="list-group-item btn btn-outline-dark">
+<!--        routerLink="/courses/{{courseId}}/modules/{{module.id}}/lessons">-->
+      <h3>Module</h3>
+      {{module.title}}
+    </li>
+  </ul>
+  <ul class="list-group">
+    <li (click)="selectLesson(lesson)"
+      *ngFor="let lesson of lessons" class="list-group-item btn btn-outline-dark">
+<!--        routerLink="/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson.id}}/topics">-->
+
+      <h3>Lesson</h3>
+      {{lesson.title}}
+    </li>
+  </ul>
+  <ul class="list-group">
+    <li (click)="selectTopic(topic)"
+      *ngFor="let topic of topics" class="list-group-item btn btn-outline-dark">
+<!--        routerLink="/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lessonId}}/topics/{{topic.id}}/widgets/">-->
+      <h3>Topic</h3>
+      {{topic.title}}
+    </li>
+  </ul>
+  <ul class="list-group">
+    <li *ngFor="let widget of widgets" class="list-group-item btn btn-outline-dark"
+        >
+      <h3>Widget</h3>
+      {{widget.type}}
+      {{widget.size}}
+    </li>
+  </ul>
+</div>
